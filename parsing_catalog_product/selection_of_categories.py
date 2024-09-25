@@ -49,7 +49,9 @@ async def get_categories(message: Message, state: FSMContext) -> None:
     text += hbold("Выберите номер категории")
 
     await message.answer(text=text)
-    await state.update_data(categories=select_category)
+    await state.update_data(
+        categories=select_category,
+    )
     await state.set_state(StateProductSearch.category_number)
 
 
@@ -64,7 +66,14 @@ async def get_enter_category_number(message: Message, state: FSMContext) -> None
     text: str = hbold("Выбрали категорию \n")
 
     if message.text.isdigit() and 1 <= int(message.text) <= len(select_category):
-        button_category = select_category[int(message.text) - 1].click()
+        category_number = int(message.text)
+        if category_number == 1:
+            driver.find_element(
+                By.XPATH,
+                "/html/body/div[1]/div/div/header/div[3]/div/div[1]/div[1]/div[1]/div[1]/button",
+            ).click()  # кликаем выбор категории
+
+        button_category = select_category[category_number - 1].click()
         sleep(300)
         if isinstance(button_category, str):
             text += "Все товары"
