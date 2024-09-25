@@ -9,7 +9,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, FSInputFile
 from bs4 import BeautifulSoup
 
-from src.utils.state import StateProductSearch
+from utils.state import StateProductSearch
 
 router: Router = Router(name=__name__)
 logger = logging.getLogger(__name__)
