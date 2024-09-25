@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 async def start_handler(message: Message) -> None:
     logger.info("Пользователь выбрал команду 'start'")
     file_path: str = (
-        r"C:\Users\Юрий С\Pictures\Screenshots\Скриншот 07-02-2024 012647.jpg"
+        r"media/magnit_1.jpg"
     )
     await message.reply_photo(
         photo=FSInputFile(path=file_path),
