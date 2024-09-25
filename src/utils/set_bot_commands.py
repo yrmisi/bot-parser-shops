@@ -1,6 +1,6 @@
 from aiogram.types import BotCommand
 
-from config_data.config import DEFAULT_COMMANDS
+from src.config_data.config import DEFAULT_COMMANDS
 
 
 async def set_default_commands(bot) -> None:

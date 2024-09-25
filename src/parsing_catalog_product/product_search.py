@@ -11,8 +11,8 @@ from selenium import webdriver
 from selenium.common import ElementNotInteractableException
 from selenium.webdriver.common.by import By
 
-from parsing_catalog_product.parsing_of_goods import parser_product
-from utils.state import StateProductSearch
+from src.parsing_catalog_product.parsing_of_goods import parser_product
+from src.utils.state import StateProductSearch
 
 router: Router = Router(name=__name__)
 logger = logging.getLogger(__name__)

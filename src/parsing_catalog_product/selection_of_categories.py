@@ -9,9 +9,9 @@ from aiogram.utils.markdown import hbold
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from parsing_catalog_product.product_search import get_product
-from utils.delet_message import del_msg
-from utils.state import StateProductSearch
+from src.parsing_catalog_product.product_search import get_product
+from src.utils.delet_message import del_msg
+from src.utils.state import StateProductSearch
 
 router: Router = Router(name=__name__)
 logger = logging.getLogger(__name__)

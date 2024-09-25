@@ -3,7 +3,7 @@ from aiogram.utils.keyboard import (
     InlineKeyboardMarkup,
 )
 
-from utils.my_callback import MyCallback
+from src.utils.my_callback import MyCallback
 
 
 def buttons_and_stop(data, stop) -> InlineKeyboardMarkup:

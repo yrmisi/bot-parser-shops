@@ -7,11 +7,11 @@ from aiogram.filters import Command
 from aiogram import F, Router
 from fake_useragent import UserAgent
 
-from keyboards.inline.lot_buttons_and_stops import buttons_and_stop
-from parsing_catalog_product.start_store_search import get_store
-from utils.my_callback import MyCallback
-from utils.state import StateProductSearch
-from utils.delet_message import del_msg
+from src.keyboards.inline.lot_buttons_and_stops import buttons_and_stop
+from src.parsing_catalog_product.start_store_search import get_store
+from src.utils.my_callback import MyCallback
+from src.utils.state import StateProductSearch
+from src.utils.delet_message import del_msg
 
 router = Router(name=__name__)
 logger = logging.getLogger(__name__)

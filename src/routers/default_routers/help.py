@@ -5,7 +5,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.utils.markdown import hbold
 
-from config_data.config import DEFAULT_COMMANDS
+from src.config_data.config import DEFAULT_COMMANDS
 
 router = Router(name=__name__)
 logger = logging.getLogger(__name__)

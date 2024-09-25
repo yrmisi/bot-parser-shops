@@ -14,9 +14,9 @@ from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
 from webdriver_manager.chrome import ChromeDriverManager
 
-from parsing_catalog_product.selection_of_categories import get_categories
-from utils.delet_message import del_msg
-from utils.state import StateProductSearch
+from src.parsing_catalog_product.selection_of_categories import get_categories
+from src.utils.delet_message import del_msg
+from src.utils.state import StateProductSearch
 
 # from parsing_catalog_product.options_for_parsing import PROXY
 
