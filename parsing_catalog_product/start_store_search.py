@@ -35,7 +35,7 @@ async def get_store(message: Message, state: FSMContext) -> None:
     options: webdriver = webdriver.ChromeOptions()
     options.add_argument(f"User-Agent={user_agent}")
     options.add_argument("start-maximized")
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     # options.add_argument(f"--proxy-server={PROXY}")
     options.add_argument(
         "--disable-extensions"
