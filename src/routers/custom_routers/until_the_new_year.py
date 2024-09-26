@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime, timedelta
+from pathlib import Path
 
 from aiogram import Router
 from aiogram.filters import Command
@@ -20,6 +21,7 @@ async def handler_new_year(message: Message) -> None:
     t_delta: timedelta = format_new_year - current_date
 
     text: str = f"До Нового Года осталось {str(t_delta).replace("days,", "дня")}"
-    await message.reply_photo(
-        photo=FSInputFile(path="media/new_year_1.jpg"), caption=text
+    file_path: Path = Path(__file__).parent.parent.parent.joinpath(
+        "media", "new_year_1.jpg"
     )
+    await message.reply_photo(photo=FSInputFile(path=file_path), caption=text)

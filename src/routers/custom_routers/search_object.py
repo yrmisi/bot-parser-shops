@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 from typing import Dict
 
 from aiogram.fsm.context import FSMContext
@@ -20,8 +21,11 @@ logger = logging.getLogger(__name__)
 @router.message(Command("search"))
 async def handler_search(message: Message, state: FSMContext) -> None:
     logger.info("Функция 'handler_search' пользователь ввел команду 'search'")
+    file_path: Path = Path(__file__).parent.parent.parent.joinpath(
+        "media", "product_1.jpg"
+    )
     await message.reply_photo(
-        photo=FSInputFile(path="media/product_1.jpg"),
+        photo=FSInputFile(path=file_path),
         caption="Выбери продуктовый маркетплейс",
         reply_markup=buttons_and_stop(
             ["search|magnit|Магнит", "search|pyaterochka|Пятерочка"], "search|stop|СТОП"
@@ -39,8 +43,11 @@ async def my_callback_foo(
     )
 
     if callback_data.item == "stop":
+        file_path: Path = Path(__file__).parent.parent.parent.joinpath(
+            "media", "see_you_again_1.jpg"
+        )
         await call.message.reply_photo(
-            photo=FSInputFile(path="media/see_you_again_1.jpg"), caption="Пока"
+            photo=FSInputFile(path=file_path), caption="Пока"
         )
         await state.clear()
 
